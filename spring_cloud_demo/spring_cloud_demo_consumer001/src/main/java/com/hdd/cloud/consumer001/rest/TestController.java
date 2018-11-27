@@ -24,7 +24,10 @@ public class TestController {
     @GetMapping("/test")
     public String test(){
         ServiceInstance serviceInstance = loadBalancerClient.choose("client001");
-        String url = "http://client001"+"/hello/2333";
+       // String url = "http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/hello/2333";
+       String url = "http://" + "localhost" + ":" + serviceInstance.getPort() + "/hello/2333";
+
+        //String url = "http://client001"+"/hello/2333";
         return restTemplate.getForObject(url, String.class);
     }
 }
