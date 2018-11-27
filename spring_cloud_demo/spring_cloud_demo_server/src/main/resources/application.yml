@@ -1,8 +1,8 @@
-server:
-  port: 7777
 spring:
   application:
     name: server
+server:
+  port: 7777
 eureka:
   instance:
     hostname: localhost

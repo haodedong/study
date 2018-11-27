@@ -35,6 +35,8 @@
     <modules>
         <module>spring_cloud_demo_server</module>
         <module>spring_cloud_demo_client_001</module>
+        <module>spring_cloud_demo_consul_client002</module>
+        <module>spring_cloud_demo_consumer001</module>
     </modules>
 
     <build>
