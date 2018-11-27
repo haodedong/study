@@ -1,0 +1,15 @@
+server:
+  port: 7777
+spring:
+  application:
+    name: server
+eureka:
+  instance:
+    hostname: localhost
+  client:
+      register-with-eureka: false
+      fetch-registry: false
+      service-url:
+        defaultZone: http://localhost:7777/eureka/
+    server:
+      enable-self-preservation: false
