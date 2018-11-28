@@ -23,11 +23,15 @@ public class TestController {
 
     @GetMapping("/test")
     public String test(){
-        ServiceInstance serviceInstance = loadBalancerClient.choose("client001");
-       // String url = "http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/hello/2333";
-       String url = "http://" + "localhost" + ":" + serviceInstance.getPort() + "/hello/2333";
+        /**
+         * 未使用@LoadBlance注解时，需要LoadBalancerClient选取实例和拼接URL，然后通过restTemplate调用
+         */
+     /*ServiceInstance serviceInstance = loadBalancerClient.choose("client001");
+       return restTemplate.getForObject(serviceInstance.getUri()+"/hello/world", String.class);*/
 
-        //String url = "http://client001"+"/hello/2333";
-        return restTemplate.getForObject(url, String.class);
+        /**
+         * 当使用@LoadBlance注解时 消费者 能够获取到所有的服务清单，不需要拼接url，端口号，直接 服务名+方法即可以调用
+         */
+        return restTemplate.getForObject("http://client001/hello/world", String.class);
     }
 }

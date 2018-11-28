@@ -1,4 +1,4 @@
-package com.hdd.cloud.demo.client001.controller;
+package com.hdd.cloud.demo.client002.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
