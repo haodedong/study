@@ -1,4 +1,4 @@
-package com.hdd.cloud.consumer001.rest;
+package com.hdd.cloud.consumer002.rest;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
